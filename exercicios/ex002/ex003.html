@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserindo JS</title>
+    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font: normal 30pt verdana serif;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Seu nome: ') //Digite seu nome
+        document.write(` Olá, ${nome}! Seja bem vindo. Seu nome tem ${nome.length} letras  <br>`)
+        document.writeln(` Maiscula: ${nome.toUpperCase()} <br>`)
+        document.writeln(` Maiscula: ${nome.toLowerCase()}`)
+    </script>
+</body>
+</html>
