@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONDIOCIONAL COMPOSTA</title>
+</head>
+<body>
+    <h1>Sistema</h1>
+    <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="Verificar" onclick="calcular()"> <!--Value é o nome do botão / 3º passo é a funcionalidade do botão-->
+    <div id="res"></div>
+    <script>
+        function calcular(){
+        var txtv = window.document.getElementById('txtvel')
+        var res = window.document.getElementById('res')
+        var vel = Number(txtv.value)
+        res.innerHTML = ` <p>Sua velocidade atual é de <strong>${vel}</strong> km/h</p>`
+        if (vel > 60){
+            res.innerHTML += ` <p>Ultrapassou o limite de 60km/h ${vel} km/h. <strong>MUTADO</strong></p>`
+        }
+        else{
+            res.innerHTML += ` <p>Não ultrapassou 60km/h, passou a ${vel} km/h. <strong>PROSSIGA</strong></p>`
+        }
+     }
+    </script>
+</body>
+</html>

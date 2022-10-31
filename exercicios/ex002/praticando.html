@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #D6D58E;
+            text-align: center;
+            font: normal 12pt Verdana;
+            color: #ffffff;
+        }
+        h1{
+            margin-bottom: 10px;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.497);
+            font-size: 20pt;
+        }
+        h4{
+            margin-bottom: 10px;
+        }
+        .fundo{
+            min-width: 320px;
+            max-width: 800px;
+            background-color: #042940;
+            padding: 40px;
+            border-radius: 20px 0px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.497);
+        }
+        input{
+            margin-bottom: 15px;
+        }
+        .botao{
+            margin-top: -5px;
+            width: 100px;
+            height: 54px;
+            background-color: #005C53;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.497);
+            font: normal 14pt Verdana;
+            color: #ebfffd;
+        }
+        .numero{
+            width: 80px;
+            height: 50px;
+            font: normal 14pt Verdana;
+        }
+        p{
+            margin: auto;
+            background-color: #DBF227;
+            color: #042940;
+            min-width: 320px;
+            max-width: 360px;
+            border-radius: 10px 0px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fundo">
+        <h1>CONSULTE SE VOCÊ PODE VOTAR</h1>
+        <h4>Digite a sua idade</h4>
+        <input class="numero" type="number" name="num" id="num">
+        <input class="botao" type="button" value="Analisar" onclick="legivel()">
+        <div id="res"></div>
+        
+        <script>
+            function legivel(){
+            var id = window.document.getElementById('num')
+            var idade = Number(id.value)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Sua idade é: <strong>${idade}</strong> anos</p><br>`
+            if(idade > 0 && idade < 16){
+                res.innerHTML += `<p>Você <strong>NÃO</strong> pode votar</p>`
+            }
+            else if(idade >= 16 && idade < 18){
+                res.innerHTML += `<p>Seu voto é <strong>OPCIONAL</strong></p>`
+            }
+            else if(idade >=18 && idade <= 65){
+                res.innerHTML += `<p>Seu voto é <strong>OBRIGATÓRIO</strong></p>`
+            }
+            else if(idade >=65 && idade <= 110){
+                res.innerHTML += `<p>Seu voto é <strong>OPCIONAL</strong></p>`
+            }
+            else{
+                res.innerHTML += `<p>Idade <strong>INVÁLIDA</strong></p>`
+            }
+        }
+        </script>
+    </div>
+    
+</body>
+</html>
